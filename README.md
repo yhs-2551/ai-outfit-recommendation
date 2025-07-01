@@ -10,7 +10,8 @@
   - 사용자 프로필과 보유 의상을 기반으로 특정 상황(날짜, 장소 등)에 맞는 최적의 스타일링을 AI가 추천하는 서비스. 
   - 사용자가 가지고 있지 않은 옷도 가상으로 생성하여 피팅 시뮬레이션을 제공.
 - **협업 툴:** Discord, Figma, Git/GitHub
-- **원본 팀 프로젝트 레포지토리:** [TEAM-FitU](https://github.com/orgs/TEAM-FitU/repositories)
+- **원본 팀 프로젝트 링크:** [TEAM-FitU](https://github.com/orgs/TEAM-FitU/repositories)
+  - **주요 기여 브랜치**: 프론트: FitU-FE -> 브랜치 feat/6, 백엔드: FitU-BE -> 브랜치 feat/7, feat/11
 
 ## ✨ 핵심 기능
 
