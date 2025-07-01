@@ -1,0 +1,50 @@
+.slider-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.slider-wrapper .slick-initialized {
+    width: 100%;
+}
+
+.slider-wrapper .slick-track {
+    width: 100%;
+    height: 300px;
+}
+
+.slider-wrapper .slick-slide {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+}
+
+.book-cover {
+    width: 100px;
+}
+
+.book-cover img {
+    width: 100px;
+}
+
+.book-cover .slide-desc {
+  display: none;
+}
+
+.slider-wrapper .slick-active+.slick-center img {
+    width: 300px;
+}
+
+.slider-wrapper .slick-active+.slick-center p {
+    display: block;
+}
+
+.slider-wrapper .slick-dots .slick-active button::before {
+    color: white;
+}
+
+.slider-wrapper .slick-dots button::before {
+    color: white;
+}

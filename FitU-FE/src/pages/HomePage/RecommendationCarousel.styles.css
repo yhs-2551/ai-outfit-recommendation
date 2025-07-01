@@ -1,0 +1,135 @@
+.carousel-bg {
+  background: #828282;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-title {
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.carousel-outer {
+  width: 100vw;
+  max-width: 1400px;
+  min-width: 350px;
+  padding: 0 80px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.recommendation-swiper {
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px 0;
+  box-sizing: border-box;
+}
+
+.recommendation-slide {
+  width: 320px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s cubic-bezier(.4,0,.2,1);
+  opacity: 0.4;
+  filter: blur(2px);
+  z-index: 1;
+}
+
+.recommendation-slide.active {
+  width: 520px !important;
+  opacity: 1;
+  filter: none;
+  z-index: 2;
+}
+
+.carousel-card {
+  width: 100%;
+  height: 340px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 32px 24px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+  transition: all 0.4s cubic-bezier(.4,0,.2,1);
+  justify-content: center;
+}
+
+.carousel-card.active {
+  justify-content: flex-start;
+}
+
+.carousel-card img {
+  width: 150px;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-desc {
+  margin-left: 24px;
+  text-align: left;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+  font-size: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: rgba(0,0,0,0.18);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: #222;
+}
+
+/* 반응형 */
+@media (max-width: 900px) {
+  .carousel-outer, .recommendation-swiper {
+    max-width: 98vw;
+    padding: 0 10px;
+  }
+  .recommendation-slide,
+  .recommendation-slide.active {
+    width: 90vw !important;
+    min-width: 0;
+  }
+  .carousel-card {
+    flex-direction: column;
+    height: auto;
+    padding: 24px 10px;
+    gap: 16px;
+  }
+  .carousel-card img {
+    width: 100px;
+  }
+}

@@ -1,0 +1,85 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.5.0'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.fitu'
+version = '0.0.1-SNAPSHOT'
+
+jar {
+    enabled = false
+}
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	/* Spring Boot */
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	/* Developer Tools */
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	/* SQL */
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+
+	/* SWAGGER */
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.8'
+
+	 // querydsl
+    implementation 'com.querydsl:querydsl-jpa:5.1.0:jakarta'
+    annotationProcessor(
+		'com.querydsl:querydsl-apt:5.1.0:jakarta',
+        'jakarta.persistence:jakarta.persistence-api',
+        'jakarta.annotation:jakarta.annotation-api'
+    )
+
+	/* aws s3 */
+	implementation platform('software.amazon.awssdk:bom:2.31.50')
+	implementation 'software.amazon.awssdk:s3'
+
+	/* dotenv */
+	implementation("me.paulschwarz:spring-dotenv:4.0.0")
+	
+	/* AWS S3 */
+	implementation 'io.awspring.cloud:spring-cloud-aws-starter-s3:3.0.0'
+}
+
+def querydslDir = "$buildDir/generated/querydsl"
+
+ sourceSets {
+    main.java.srcDirs += [ querydslDir ]
+}
+
+tasks.withType(JavaCompile) {
+    options.annotationProcessorGeneratedSourcesDirectory = file(querydslDir)
+} 
+
+clean.doLast {
+    file(querydslDir).deleteDir() 
+}
+
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

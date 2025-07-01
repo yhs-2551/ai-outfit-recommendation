@@ -1,0 +1,64 @@
+.image-gallery-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 4rem auto;
+  }
+  
+  .image-gallery-card {
+    width: 22rem;
+    aspect-ratio: 3 / 4;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .image-gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    padding: 2rem;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 3rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    max-width: 50rem;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  .modal-content img {
+    width: 20rem;
+    aspect-ratio: 3 / 4;
+    border-radius: 1rem;
+    object-fit: cover;
+  }
+  
+  .modal-description {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }

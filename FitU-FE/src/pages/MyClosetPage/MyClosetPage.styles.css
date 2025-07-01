@@ -1,0 +1,41 @@
+@media screen and (max-width: 1370px) {
+    .myCloset-main {
+        margin: 0 4.375rem;
+    }
+
+    .myCloset-main__div {
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .edit-modal-container {
+        padding: 0 3.125rem;
+    }
+
+    .edit-modal-container__div {
+        height: 48rem;
+    }
+
+    .edit-modal__btn {
+        padding: 1.5rem 0;
+    }
+
+    .edit-modal-container__text {
+        font-size: 0.95rem;
+    }
+
+    .img-uploader-container {
+        height: 16.875rem;
+    }
+
+    .edit-modal-imgUploader-container {
+        height: 266px;
+        margin: 1.69em 0;
+        justify-content: center;
+    }
+
+    .addCloset-main__div {
+        gap: 10px;
+    }
+}
